@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  min-height: 100vh;
+  height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#flex-container {
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  width: 80%;
+  height: 100vh;
+  border: 1px solid black;
+}
+#turn-displayer {
+  flex: 1;
+  border: 1px solid black;
+}
+
+#gameboard-container {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 7;
+}
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3x3 */
+  grid-template-rows: repeat(3, 1fr); /* 3x3 */
+  height: 300px;
+  width: 300px;
+  padding: 10px;
+  border: 4px solid red;
+}
+
+#result {
+  flex: 1;
+  border: 1px solid black;
+  flex: 1;
+}
