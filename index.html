@@ -6,14 +6,31 @@
     <title>Tictactoe</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="/game.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div id="flex-container">
-      <h1>Tic Tac Toe</h1>
-      <div id="turn-displayer">Player 1's Turn</div>
-      <div id="gameboard-container">
-        <div id="gameboard">Gameboard</div>
-      </div>
+      <header>
+        <h1>Tic Tac Toe</h1>
+        <a
+          href="https://github.com/CodePioneer2/"
+          rel="nofollow noopener noreferrer external"
+          target="_blank"
+        >
+          <span aria-hidden="true" style="color: Tomato">
+            <i class="fa-brands fa-github fa-bounce fa-2x"></i>
+          </span>
+        </a>
+      </header>
+      <div id="turn">Click anywhere to start the game</div>
+      <button id="start-btn">Start game</button>
+      <div id="gameboard"></div>
       <div id="result">
         <p>
           <span id="player1-name">Player 1</span> Score:
