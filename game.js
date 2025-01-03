@@ -74,21 +74,22 @@ const Game = (() => {
       return;
     }
     RenderDOM.renderBoard();
-    if (Gameboard.checkTie()) {
-      isGameOver = gameOver();
-      return;
-    }
+    
     if (Gameboard.checkWin()) {
       currentPlayer.increaseScore();
       isGameOver = gameOver();
       return;
     }
+    if (Gameboard.checkTie()) {
+        isGameOver = gameOver(true);
+        return;
+    }
     switchPlayer();
     RenderDOM.displayTurn(currentPlayer.name, currentPlayer.symbol);
   };
 
-  const gameOver = () => {
-    RenderDOM.gameOver(player1, player2, currentPlayer);
+  const gameOver = (tie) => {
+    RenderDOM.gameOver(player1, player2, currentPlayer, tie);
     return true;
   };
 
@@ -132,12 +133,11 @@ const RenderDOM = (() => {
     });
   };
 
-  const gameOver = (player1, player2, currentPlayer) => {
+  const gameOver = (player1, player2, currentPlayer, tie = false) => {
     const player1Score = document.getElementById('player1-score');
     const player2Score = document.getElementById('player2-score');
     const board = Gameboard.getBoard();
     const turn = document.getElementById('turn');
-    const tie = false;
 
     // display restart button
     startBtn.textContent = 'Play again';
